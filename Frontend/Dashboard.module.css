@@ -1,0 +1,187 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.headerLogo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.accent { color: var(--accent); font-style: italic; }
+
+.main {
+  flex: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+  width: 100%;
+}
+
+.hero { margin-bottom: 3rem; }
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 560px;
+}
+
+/* Drop zone */
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+  margin-bottom: 1.25rem;
+  background: var(--surface);
+}
+
+.dropzone:hover, .dragging {
+  border-color: var(--accent);
+  background: rgba(232,197,71,0.03);
+}
+
+.hasFile {
+  border-color: var(--ok);
+  border-style: solid;
+}
+
+.uploadIcon, .fileIcon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.dropText {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.dropHint {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.fileName {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--ok);
+  margin-bottom: 0.2rem;
+}
+
+.fileSize {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.fileHint {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* Progress */
+@keyframes progress {
+  from { width: 5%; }
+  to   { width: 90%; }
+}
+
+.progressBar {
+  background: var(--surface-2);
+  border-radius: 4px;
+  height: 4px;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+  animation: progress 12s ease-out forwards;
+}
+
+.progressText {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.analyzeBtn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Feature grid */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.featureCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: border-color var(--transition);
+}
+
+.featureCard:hover { border-color: var(--border); }
+
+.featureIcon {
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.featureCard strong {
+  font-size: 0.92rem;
+}
+
+.featureDesc {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
